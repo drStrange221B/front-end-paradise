@@ -1,0 +1,180 @@
+/* 
+======================
+Variables
+======================
+*/
+
+:root {
+  --primaryColor: #f15025;
+  --mainBlack: #222;
+  --maniWhite: #f7f7f7;
+  --darkGrey: #afafaf;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 0.2rem;
+}
+/* 
+=======================
+Global Styles
+=======================
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Fira Code", monospace;
+  color: var(--mainBlack);
+  background: --mainWhite;
+  line-height: 1.5;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  margin-bottom: 0;
+}
+p {
+  font-weight: 300;
+  font-size: 0.7rem;
+  line-height: 2rem;
+}
+.btn {
+  text-transform: capitalize;
+  border: 3px solid var(--primaryColor);
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: var(--primaryColor);
+  margin: 3rem;
+  transition: var(--mainTransition);
+}
+.btn:hover {
+  background: var(--primaryColor);
+  color: var(--maniWhite);
+}
+/* 
+===========================
+main-navbar
+===========================
+*/
+.main-navbar {
+  width: 100%;
+  background: var(--darkGrey);
+  padding: 0 2rem;
+}
+.main-navbar li {
+  list-style: none;
+}
+.main-navbar li a {
+  padding: 1rem 0;
+  letter-spacing: var(--mainSpacing);
+  text-transform: capitalize;
+  transition: var(--mainTransition);
+  display: block;
+  color: var(--primaryColor);
+}
+.main-navbar li:hover a {
+  color: var(--mainBlack);
+  /* transform: translateY(5px); */
+  padding-left: 10px;
+  background-color: var(--maniWhite);
+}
+
+@media screen and (min-width: 992px) {
+  .main-navbar ul {
+    width: 85%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .main-navbar li {
+    text-align: center;
+  }
+}
+
+/* 
+===========================
+Container
+===========================
+*/
+.container {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  background: linear-gradient(
+      to left,
+      rgba(0, 0, 255, 0.3),
+      rgba(0, 0, 255, 0.3)
+    ),
+    url(./images/image-1.jpeg) no-repeat center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content h1,
+h2 {
+  color: var(--maniWhite);
+  letter-spacing: var(--mainSpacing);
+}
+.content h1 {
+  font-size: 8rem;
+  text-align: center;
+  animation: from-left 2s linear;
+}
+.content h2 {
+  font-size: 6rem;
+  text-align: center;
+  animation: from-right 2s linear;
+}
+@keyframes from-left {
+  0% {
+    transform: translateX(-2000px);
+  }
+  25% {
+    transform: translateX(-50px);
+  }
+  50% {
+    transform: translateX(1000px);
+  }
+  75% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes from-right {
+  0% {
+    transform: translateX(2000px);
+  }
+  25% {
+    transform: translateX(50px);
+  }
+  50% {
+    transform: translateX(-1000px);
+  }
+  75% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
