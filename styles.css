@@ -260,3 +260,85 @@ Cards
   grid-template-columns: repeat(auto-fill, minmax(362px, 1fr));
   column-gap: 2rem;
 }
+.card-img {
+  height: 100%;
+}
+
+/* 
+================================
+Tiles
+================================
+ */
+.tiles {
+  padding: 4rem 0;
+}
+.tiles-center {
+  width: 90%;
+  max-width: 1150px;
+  margin: 2rem auto;
+  display: grid;
+  row-gap: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .tiles-center {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .tiles-center {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .tiles-center {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 200px);
+    grid-template-areas:
+      "a a a b"
+      "a a a c"
+      "d d d d"
+      "e f f f"
+      "e g h i";
+  }
+  .tile-1 {
+    grid-area: a;
+    object-fit: cover;
+  }
+  .tile-2 {
+    grid-area: b;
+    object-fit: cover;
+  }
+  .tile-3 {
+    grid-area: c;
+    object-fit: cover;
+  }
+  .tile-4 {
+    grid-area: d;
+    object-fit: cover;
+  }
+  .tile-5 {
+    grid-area: e;
+    object-fit: cover;
+  }
+  .tile-6 {
+    grid-area: f;
+    object-fit: cover;
+  }
+  .tile-7 {
+    grid-area: g;
+    object-fit: cover;
+  }
+  .tile-8 {
+    grid-area: h;
+    object-fit: cover;
+  }
+  .tile-9 {
+    grid-area: i;
+    object-fit: cover;
+  }
+}
+.tiles-center img {
+  /* width: 100%; */
+  height: 100%;
+}
