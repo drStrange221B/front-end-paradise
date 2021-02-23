@@ -7,7 +7,7 @@ Variables
 :root {
   --primaryColor: #f15025;
   --mainBlack: #222;
-  --maniWhite: #f7f7f7;
+  --mainWhite: #f7f7f7;
   --darkGrey: #afafaf;
   --mainTransition: all 0.3s linear;
   --mainSpacing: 0.2rem;
@@ -66,7 +66,7 @@ p {
 }
 .btn:hover {
   background: var(--primaryColor);
-  color: var(--maniWhite);
+  color: var(--mainWhite);
 }
 /* 
 ===========================
@@ -93,7 +93,7 @@ main-navbar
   color: var(--mainBlack);
   /* transform: translateY(5px); */
   padding-left: 10px;
-  background-color: var(--maniWhite);
+  background-color: var(--mainWhite);
 }
 
 @media screen and (min-width: 992px) {
@@ -114,13 +114,14 @@ Container
 ===========================
 */
 .container {
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw; */
+  height: 91vh;
   object-fit: cover;
+  margin: 0.5rem;
   background: linear-gradient(
       to left,
-      rgba(0, 0, 255, 0.3),
-      rgba(0, 0, 255, 0.3)
+      rgba(0, 0, 255, 0.2),
+      rgba(0, 0, 255, 0.2)
     ),
     url(./images/image-1.jpeg) no-repeat center;
   background-size: cover;
@@ -131,7 +132,7 @@ Container
 
 .content h1,
 h2 {
-  color: var(--maniWhite);
+  color: var(--mainWhite);
   letter-spacing: var(--mainSpacing);
 }
 .content h1 {
@@ -177,4 +178,85 @@ h2 {
   100% {
     transform: translateX(0);
   }
+}
+
+/* 
+============================
+Header
+============================
+*/
+.hero-header {
+  min-height: 100vh;
+  display: grid;
+
+  align-items: center;
+  justify-content: center;
+  /* text-align: center; */
+  color: var(--mainWhite);
+  background: linear-gradient(
+      to bottom,
+      rgba(230, 54, 1, 0.65),
+      rgba(0, 0, 0, 0.59)
+    ),
+    url(./images/image-2.jpeg) center/cover fixed no-repeat;
+}
+.hero-banner p {
+  width: 80%;
+  max-width: 560px;
+  font-size: 1rem;
+}
+
+/* 
+=======================
+Cards
+=======================
+*/
+.title {
+  text-align: center;
+}
+.cards {
+  padding: 4rem 0;
+}
+.card-center {
+  width: 80vw;
+  max-width: 1170px;
+  margin: 2rem auto;
+}
+.card {
+  border: 1px solid var(--darkGrey);
+  margin-bottom: 3rem;
+}
+.card-info {
+  padding: 1rem;
+}
+.card-footer {
+  display: grid;
+  background: var(--darkGrey);
+  grid-template-columns: repeat(4, 1fr);
+  padding: 1rem 1rem;
+  justify-items: center;
+  color: var(--primaryColor);
+}
+/* @media screen and (min-width: 768px) {
+  .card-center {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .card-center {
+    grid-template-columns: repeat(3, 1fr);
+  }
+} */
+
+/* calculate minmax value
+ (width_of_max_screen - individual_space x no._of_spaces)/no._of_items
+ (1152 - (32 x 3))/3 = 368px
+
+*/
+.card-center {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(362px, 1fr));
+  column-gap: 2rem;
 }
